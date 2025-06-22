@@ -1,6 +1,5 @@
 class Person:
-    def __init__(self, nome, cognome, eta,
-                 capelli, occhi, casa, incantesimo="Non ancora definito"):
+    def __init__(self, nome, cognome, eta, capelli, occhi, casa, incantesimo="Non ancora definito"):
         self.nome = nome
         self._cognome = cognome
         self.eta = eta
@@ -14,18 +13,17 @@ class Person:
         return f"Person: {self.nome} {self._cognome} \n"
 
     @property
-    def cognome(self):  # eq. GETTER
+    def cognome(self):  # equivale a GETTER
         return self._cognome
 
     @cognome.setter
-    def cognome(self, value):  # eq. SETTER
-        # CONTROLLI per verificare che value sia compativile con _cognome
+    def cognome(self, value):  # equivale a SETTER
+        # CONTROLLI per verificare che value sia compatibile con _cognome
         self._cognome = value
 
 
 class Student(Person):
-    def __init__(self, nome, cognome, eta,
-                 capelli, occhi, casa, animale, incantesimo="Non ancora definito"):
+    def __init__(self, nome, cognome, eta, capelli, occhi, casa, animale, incantesimo="Non ancora definito"):
         super().__init__(nome, cognome, eta, capelli, occhi, casa, incantesimo)
         self.animale = animale
 
@@ -38,10 +36,11 @@ class Student(Person):
     def prettyPrint(self):
         print("Voglio stampare meglio")
 
+    def copy(self):
+        return Student(self.nome, self.cognome, self.eta, self.capelli, self.occhi, self.casa, self.animale, self.incantesimo)
 
 class Teacher(Person):
-    def __init__(self, nome, cognome, eta,
-                 capelli, occhi, casa, materia, incantesimo="Non ancora definito"):
+    def __init__(self, nome, cognome, eta, capelli, occhi, casa, materia, incantesimo="Non ancora definito"):
         super().__init__(nome, cognome, eta, capelli, occhi, casa, incantesimo)
         self.materia = materia
 
@@ -56,7 +55,7 @@ class Casa:
 
     def addStudente(self, studente):
         self.studenti.append(studente)  # --> [ x,x,x [s1, s2]]
-        # self.studenti.extend(studente) # --> [ x,x,x, s1, s2 ]
+        # self.studenti.extend(studente) # --> [ x,x,x, s1, s2 ]: se aggiungo una lista di studenti li aggiunge uno per volta
 
     def __str__(self):
         if len(self.studenti) == 0:

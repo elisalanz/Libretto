@@ -1,13 +1,10 @@
-from dataclasses import dataclass
 from scuola import Student, Teacher, Casa, Scuola, Person
-# import voto
-# importiamo un solo nome, che è il
-# nome del modulo "voto", e poi accedo alle varie
-# classi con la notazione voto.Voto, voto.Libretto
 
-from voto.voto import Voto, Libretto
+# import voto
+# importiamo un solo nome, che è il nome del modulo "voto", e poi accedo alle varie classi con la notazione voto.Voto, voto.Libretto
+
+from voto.modello import Voto, Libretto
 # importiamo più nomi indipendenti, Voto, Libretto
-import flet
 
 # from voto import *
 # importa tutti i nomi in voto in maniera indipendente, Voto, Libretto, cfuTot
@@ -94,8 +91,7 @@ print(Harry, Ron, Susan, Xenophilius, Remus)
 
 personaggi = [Harry, Hermione, Ron, Neville, Ginny, Sirius, Remus, Minerva, Albus, Rubeus, James, Lily, Fred, George,
               Draco, Severus, Horace, Bellatrix, Lucius, Narcissa, Pansy, Blaise, Luna, Cho, Gilderoy, Filius,
-              Xenophilius,
-              Padma, Michael, Cedric, Pomona, Hannah, Ernest, Susan, Ted]
+              Xenophilius, Padma, Michael, Cedric, Pomona, Hannah, Ernest, Susan, Ted]
 
 grifondoro = Casa("Grifondoro", [])
 tassorosso = Casa("Tassorosso", [])
@@ -132,11 +128,13 @@ v1 = Voto("Trasfigurazione", 24, "2022-02-13", False)
 v2 = Voto("Pozioni", 30, "2022-02-17", True)
 v3 = Voto("Difesa contro le arti oscure", 27, "2022-04-13", False)
 print(v1)
+print()
 
 mylib = Libretto(Harry, [v1, v2])
 print(mylib)
 mylib.append(v3)
 print(mylib)
-# print(Lily._cognome) # NOOOO!
 
+
+# print(Lily._cognome) # NOO!
 # print(Lily._Person__prova) NOOOOOOO!
